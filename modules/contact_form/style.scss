@@ -1,0 +1,129 @@
+.contact_form_module {
+    padding: 0;
+    @include margin-bottom(50px);
+    @include media-breakpoint-up(md) {
+        @include margin-top(50px);
+        @include padding(0 100px);
+    }
+
+    .row {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        @include media-breakpoint-down(md) {
+            margin: 0;
+        }
+    }
+
+    .sidebar {
+        position: relative;
+        z-index: 1;
+        background: var(--green);
+        color: #fff;
+        padding: 30px 20px;
+        box-shadow: 10px 0 10px rgba(0,0,0,0.15);
+        @include media-breakpoint-up(md) {
+            @include padding-top(80px);
+            @include padding-bottom(80px);
+            padding-left: 4.2vw;
+            padding-right: 4.2vw;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .form_container {
+        padding: 30px 20px;
+        background: #fff;
+        @include media-breakpoint-up(md) {
+            @include padding-top(80px);
+            @include padding-bottom(80px);
+            padding-left: 7vw;
+            padding-right: 7vw;
+        }
+    }
+}
+
+.warehouses {
+    padding: 50px 20px;
+    @include media-breakpoint-up(md) {
+        @include padding(100px);
+    }
+
+    .header {
+        @include margin-bottom(50px);
+    }
+
+    .row.warehouse_items {
+        div[class*=col] {
+            display: flex;
+            flex-wrap: wrap;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .change_map {
+        border: none;
+        margin-top: 10px;
+        align-self: flex-end;
+
+        &:not(.active) {
+            background: $gray-500;
+        }
+    }
+}
+
+.contact_map {
+    iframe {
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+/**************
+WPForms Styles
+***************/
+
+.form_container {
+    .wpforms-container {
+        input.wpforms-field-medium,
+        select.wpforms-field-medium,
+        .wpforms-field-row.wpforms-field-medium {
+            max-width: none;
+        }
+
+        .wpforms-field-description,
+        .wpforms-field-limit-text {
+            display: none;
+        }
+
+        input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week],
+        select,
+        textarea {
+            height: 50px;
+            padding: 0 20px;
+            background: #f8f8f8;
+            border: none;
+        }
+
+        textarea,
+        textarea.wpforms-field-medium{
+            height: 200px;
+            padding: 20px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "usi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@barba/core": "^2.9.7",
+    "@popperjs/core": "^2.11.5",
+    "@splidejs/splide": "^4.0.7",
+    "bootstrap": "^5.2.0",
+    "browser-sync": "^2.27.10",
+    "fancy-log": "^2.0.0",
+    "gsap": "^3.10.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "hamburgers": "^1.2.1",
+    "lozad": "^1.16.0",
+    "sass": "^1.52.3",
+    "webpack": "^5.73.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "glightbox": "^3.2.0",
+    "merge-stream": "^2.0.0"
+  }
+}

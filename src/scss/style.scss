@@ -1,0 +1,63 @@
+/*
+Theme Name: Universal Stone Imports
+Author: Devon Riley
+Version: 1.0
+*/
+
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import 'bootstrap/scss/functions';
+
+// Custom bootstrap overrides
+@import './bootstrap_custom';
+
+// Bootstrap required styles
+@import 'bootstrap/scss/bootstrap-utilities';
+@import 'bootstrap/scss/root';
+
+// Include any optional Bootstrap CSS as needed
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/tables';
+
+// Libraries
+
+@import 'hamburgers/_sass/hamburgers/hamburgers';
+@import 'hamburgers/_sass/hamburgers/base';
+
+// Global
+
+@import './fonts';
+@import './variables';
+@import './type';
+@import './buttons';
+@import './global';
+@import './notification-bar';
+@import './primary-menu';
+@import './menu_drawer';
+@import './modal';
+@import './post-grid';
+@import './products-page';
+@import './primary-footer';
+@import 'registration_form';
+@import './post-single';
+@import './lightbox_override';
+//@import './user-photo-uploads';
+
+// Modules
+
+@import 'modules/column_content/style';
+@import 'modules/contact_form/style';
+@import 'modules/gallery/style';
+@import 'modules/hero/style';
+@import 'modules/rich_text/style';
+@import 'modules/single_image/style';

@@ -1,0 +1,61 @@
+.login-page,
+.reset-password-page,
+.register-page {
+    margin: 100px 0;
+}
+
+.usiResetPasswordForm,
+.usiRegistrationForm,
+.usiLoginForm {
+    margin-bottom: 30px;
+
+    .errorMessage {
+        display: none;
+
+        &.active {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: red;
+        }
+    }
+
+    #password-strength {
+        display: none;
+
+        &.active {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 12px;
+
+            &.bad,
+            &.short {
+                color: red;
+            }
+
+            &.good,
+            &.strong {
+                color: green;
+            }
+        }
+    }
+
+    .formMessage {
+        display: none;
+        margin-top: 10px;
+
+        &.active {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        &.error {
+            color: red;
+        }
+
+        &.success {
+            color: green;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+h1, .h1 {
+    @include font-size(90px);
+    margin-bottom: .5em;
+}
+
+h2, .h2 {
+    @include font-size(70px);
+    margin-bottom: .5em;
+}
+
+h3, .h3 {
+    @include font-size(50px);
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 16px;
+    @include media-breakpoint-up(xl) {
+        @include font-size(24px);
+    }
+}
+
+ul, ol {
+    margin: 2em 0 2em 2em;
+
+    li {
+        font-size: 16px;
+        @include media-breakpoint-up(xl) {
+            @include font-size(24px);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.notification-bar {
+    background: var(--green);
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+
+    a {
+        color: $white;
+        text-decoration: underline;
+    }
+}

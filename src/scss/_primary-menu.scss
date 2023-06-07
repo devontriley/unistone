@@ -1,0 +1,159 @@
+.primary_menu {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-up(md) {
+        @include rfs(72px, height); // matches #viewport-border top
+    }
+
+    body.enable-notification-bar & {
+        top: 30px;
+    }
+
+    .logo {
+        img {
+            @include rfs(320px, width);
+            @include media-breakpoint-down(lg) {
+                width: 150px;
+            }
+        }
+    }
+
+    .dealer-links {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    .menu-primary-menu-container {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+
+    .hamburger {
+        display: block;
+        height: 24px;
+        align-self: center;
+        padding: 0;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    ul.menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        @include font-size(16px);
+
+        li {
+            @include font-size(16px);
+        }
+
+        & > li.menu-item {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            margin-right: 20px;
+            vertical-align: top;
+
+            &:hover:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 5px;
+                background: var(--green);
+                pointer-events: none;
+            }
+
+            &.menu-item-has-children:hover {
+                ul.sub-menu {
+                    display: block;
+                }
+            }
+
+            &.current-menu-ancestor,
+            &.current-menu-item {
+                & > a,
+                & > span {
+                    color: var(--green);
+                }
+
+                .dealer-icon {
+                    fill: var(--green);
+                }
+            }
+
+            .dealer-icon {
+                fill: #3d3d3d;
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+
+            &:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown,
+            ul.sub-menu {
+                display: none;
+                position: absolute;
+                left: 50%;
+                top: calc(100% - 1px);
+                transform: translateX(-50%);
+                width: 200px;
+                margin: 0;
+                padding: 20px;
+                list-style: none;
+                background: $white;
+                text-align: center;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                li {
+                    white-space: nowrap;
+                }
+
+                a {
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        .dealer-login a {
+            font-weight: 700;
+            white-space: normal;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            color: #333;
+        }
+    }
+}

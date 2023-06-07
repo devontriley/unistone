@@ -1,0 +1,9 @@
+.single_image {
+    @include padding-top(200px);
+    @include padding-bottom(200px);
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

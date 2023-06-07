@@ -1,0 +1,52 @@
+.footer-nsim {
+    padding: 50px 20px;
+    background: #fff;
+    @include media-breakpoint-up(md) {
+        @include padding-left(100px);
+        @include padding-right(100px);
+    }
+
+    div[class*=col]:not(:last-child) {
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    .social-icons {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-right: 15px;
+
+            a:hover {
+                svg {
+                    fill: var(--green);
+                }
+            }
+        }
+    }
+}
+
+.nsim-logo {
+    width: 100%;
+    height: auto;
+}
+
+.copyright-bar {
+    background: $dark;
+    color: $white;
+    padding: 0 20px;
+    @include font-size(16px);
+    @include media-breakpoint-up(md) {
+        @include padding-left(100px);
+        @include padding-right(100px);
+    }
+
+    .row {
+        height: 80px;
+    }
+}

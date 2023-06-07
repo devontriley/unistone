@@ -1,0 +1,33 @@
+// RFS
+$rfs-breakpoint: 2560px;
+$rfs-base-value: 1rem;
+
+// Grid
+$grid-gutter-width: 2rem; // 30px
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1920px
+);
+
+// Fonts
+$font-size-base: 1rem; // 16px @ 1440
+$h1-font-size: 4.51rem; // 65px @ 1440
+$h2-font-size: 3.125rem; // 50px @ 1440
+
+// Color
+$primary: #82BB41;
+$black: #333333;
+
+// Links
+$link-decoration: none;
+
+// Offcanvas
+$offcanvas-bg-color: #82BB41;
+$offcanvas-padding-x: 40px;
+$offcanvas-padding-y: 70px;

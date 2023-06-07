@@ -1,0 +1,74 @@
+.user-photo-uploads {
+
+    .field-group {
+        margin-bottom: 10px;
+    }
+}
+
+.user-photo-preview {
+    margin: 20px 0;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+
+        li {
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+            padding: 20px;
+
+            &.invalid-filetype {
+                background: red;
+                color: #fff;
+                font-weight: 700;
+            }
+
+            div {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .filesize {
+                display: inline-block;
+                margin-right: 10px;
+                text-align: right;
+            }
+        }
+    }
+
+    button.remove-photo {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        svg {
+            fill: red;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+}
+
+#form-message {
+    margin-top: 20px;
+
+    &.success {
+        color: var(--green)
+    }
+
+    &.error {
+        color: red
+    }
+}

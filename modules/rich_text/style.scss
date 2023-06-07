@@ -1,0 +1,27 @@
+.rich_text_module {
+    background: #eeeeee;
+    padding: 50px 20px;
+    @include media-breakpoint-up(md) {
+        @include padding(100px);
+    }
+
+    .image {
+        margin-top: 50px;
+        @include media-breakpoint-up(xxxl) {
+            margin-top: 0;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    ul {
+        li {
+            @include media-breakpoint-up(xl) {
+                @include font-size(24px);
+            }
+        }
+    }
+}

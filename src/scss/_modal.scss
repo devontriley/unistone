@@ -1,0 +1,48 @@
+#usi-modal {
+    width: calc(100vw - 40px);
+    max-width: 600px;
+    padding: 0;
+    border: 0;
+    border-top: 6px solid $green;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.usi-dialog-inner {
+    padding: 0 30px 30px 30px;
+    background: #fff;
+
+    &::backdrop {
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .usi-modal-header {
+        width: 100%;
+        padding: 20px 0;
+        background: #fff;
+        position: sticky;
+        top: 0;
+    }
+
+    .usi-modal-close {
+        display: block;
+        border: none;
+        background: none;
+        width: auto;
+        height: auto;
+        line-height: 1;
+        padding: 0;
+
+        svg {
+            display: block;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .usi-modal-body {
+
+    }
+}

@@ -1,0 +1,43 @@
+.hero {
+    position: relative;
+    height: 60vh;
+    background-size: cover;
+    @include media-breakpoint-up(md) {
+        height: calc(100vh - 70px); // 70px accounts for #viewport-border top and bottom
+    }
+    @include media-breakpoint-up(lg) {
+        background-attachment: fixed;
+    }
+
+    .h1 {
+        //@include font-size(50px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        background: rgba(#82BB41, 0.7);
+        @include padding(10px 20px);
+        margin: 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+        max-width: 90%;
+        @include media-breakpoint-up(md) {
+            width: auto;
+        }
+    }
+
+    .scroll_down {
+        position: absolute;
+        left: 50%;
+        bottom: 5vh;
+        transform: translateX(-50%);
+        color: #fff;
+        text-align: center;
+
+        svg {
+            margin-top: 10px;
+        }
+    }
+}
