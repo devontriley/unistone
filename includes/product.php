@@ -2,7 +2,7 @@
 $id = $product->ID;
 $selectedColor = ($variant === 'false') ? null : $variant;
 $thumbnail = get_field('thumbnail', $id);
-$placeholderImage = get_bloginfo('url') . '/wp-content/uploads/2022/08/No-image.png';
+$placeholderImage = get_template_directory_uri() . '/src/images/missing-image.png';
 
 $colors = get_field('colors', $id);
 $firstColor = null;
