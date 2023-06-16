@@ -16,7 +16,7 @@ $user = wp_get_current_user();
                     Please follow this file naming format: <span class="fst-italic">{Color}_{Product Name}.jpg</span>
                 </p>
                 <p class="fst-italic">
-                    Photos must be jpg or png filetype and no larger than 40MB in size.
+                    Photos must be jpg or png file format and no larger than 40MB in size.
                 </p>
 
                 <form id="user-photo-uploads" class="user-photo-uploads" method="post" enctype="multipart/form-data">
