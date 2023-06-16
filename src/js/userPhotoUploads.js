@@ -6,6 +6,7 @@ class UserPhotoUploads {
         this.input = $('#user-photos')
         this.preview = $('#user-photo-preview')
         this.submit = $('button[type="submit"]', this.form)
+        this.loader = $('.loader')
         this.fileTypes = [
             'image/jpg',
             'image/jpeg',
@@ -74,6 +75,8 @@ class UserPhotoUploads {
         // Empty preview div contents
         this.preview.empty()
 
+        console.log('test')
+
         // Store selected files in variable
         const curFiles = reset ? [] : this.input[0].files;
 
@@ -124,7 +127,7 @@ class UserPhotoUploads {
         e.preventDefault()
 
         this.submit.prop('disabled', true)
-
+        this.loader.removeClass('d-none')
         this.message.removeClass('success error').html('')
 
         let formData = new FormData(this.form[0])
@@ -162,11 +165,13 @@ class UserPhotoUploads {
         console.log(response)
         const { data } = response
         this.clearFiles()
+        this.loader.addClass('d-none')
         this.message.addClass('success').html('Thanks for sending us your installation photos!')
     }
 
     handleError(error) {
         console.log(error)
+        this.loader.addClass('d-none')
         this.message.addClass('error').html('There was an error uploading your photos. Check the file type and size and try again.')
         this.submit.prop('disabled', false)
     }

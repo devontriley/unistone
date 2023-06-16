@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 // Theme support
 if (function_exists('add_theme_support')) {
     add_theme_support( 'post-thumbnails' );
@@ -33,7 +35,7 @@ add_filter('upload_mimes', 'cc_mime_types');
 // Register styles
 if (!function_exists('usi_styles')) :
     function usi_styles() {
-        wp_register_style( 'usi-style', get_stylesheet_uri(), array(), time() );
+        wp_register_style( 'usi-style', get_stylesheet_uri(), filemtime(get_template_directory() . '/style.css'), time() );
         wp_enqueue_style( 'usi-style' );
 
     }
@@ -48,7 +50,7 @@ if (!function_exists('usi_scripts')) :
         wp_register_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js?render=6Leny8chAAAAAG9VA9cEjcPpBrtrxfzBfMouIb2o', array('jquery'), null, true);
         wp_enqueue_script('google-recaptcha');
 
-        wp_register_script( 'usi-script', get_template_directory_uri().'/main.js', array('jquery'), '1.0', true );
+        wp_register_script( 'usi-script', get_template_directory_uri().'/main.js', array('jquery'), filemtime(get_template_directory() . '/main.js'), true );
         wp_enqueue_script( 'usi-script' );
         wp_localize_script('usi-script', 'localizedVars', array(
             'pageID' => get_the_ID()
@@ -550,10 +552,29 @@ function usi_redirect_on_logout() {
 }
 add_action('wp_logout', 'usi_redirect_on_logout');
 
+include('includes/dropbox.php');
 include ('includes/admin-users.php');
 include('includes/register.php');
 include('includes/login.php');
 include('includes/edit-profile.php');
 include('includes/reset-password.php');
 include('includes/modal.php');
-//include('includes/dropbox.php');
+include('includes/userUploads/userPhotoUploads.php');
+include('includes/sapReports/sap-report-fetch.php');
+
+// Add a new wp-cron interval to tirgger every two minutes
+//function two_minute_cron_interval( $schedules ) {
+//    $schedules['two_minutes'] = array(
+//        'interval' => 120,
+//        'display'  => esc_html__( 'Every Two Minutes' ), );
+//    return $schedules;
+//}
+//add_filter( 'cron_schedules', 'two_minute_cron_interval' );
+
+// Create cron hook to fetch sap reports
+add_action( 'usi_cron_hook', 'fetch_sap_reports' );
+
+// Check if sap cron hook has been scheduled, and schedule it if it hasn't
+if ( !wp_next_scheduled( 'usi_cron_hook' ) ) {
+    wp_schedule_event( 1686600300, 'hourly', 'usi_cron_hook' );
+}
