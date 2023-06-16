@@ -537,7 +537,11 @@ add_action('wp_ajax_fetch_product', 'fetchProduct');
 function usi_user_profile_redirect() {
     global $post;
 
-    if($post->post_name === 'user-profile' || $post->post_name === 'edit-user-profile') {
+    if(
+        $post->post_name === 'user-profile' ||
+        $post->post_name === 'edit-user-profile' ||
+        $post->post_name === 'user-photo-uploads'
+    ) {
         if(!is_user_logged_in()) {
             wp_redirect(get_home_url());
             exit();
