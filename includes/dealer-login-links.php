@@ -53,6 +53,7 @@ if (is_user_logged_in()) :
                 echo '';
         }
     }
+    echo '<li class="menu-item"><a href="'. $siteURL .'/user-photo-uploads">Upload Photos</a></li>';
     echo '<li class="menu-item"><a href="' . esc_url(wp_logout_url(get_home_url())) . '">Logout</a></li>';
 else :
     echo '<li class="dealer-login menu-item"><a href="' . $siteURL . '/login">Dealer Login</a></li>';
