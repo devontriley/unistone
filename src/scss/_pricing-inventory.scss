@@ -1,0 +1,43 @@
+.role-container-column {
+    margin-bottom: var(--bs-gutter-x);
+}
+
+.role-container {
+    height: 100%;
+    transition: all ease 300ms;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.file {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
+
+    a {
+        color: #333333;
+
+        &:hover {
+            color: var(--green);
+        }
+    }
+
+    .filetype-icon-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px; 
+        border: 1px solid $card-border-color;
+        border-radius: 30px;
+
+        .icon {
+            position: absolute; 
+            inset: 0; 
+            margin: auto; 
+            fill: var(--green);
+        }
+    }
+}

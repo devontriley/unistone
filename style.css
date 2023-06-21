@@ -19845,6 +19845,47 @@ body.enable-notification-bar .primary_menu {
   color: red;
 }
 
+.role-container-column {
+  margin-bottom: var(--bs-gutter-x);
+}
+
+.role-container {
+  height: 100%;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+.role-container:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.file {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+.file a {
+  color: #333333;
+}
+.file a:hover {
+  color: var(--green);
+}
+.file .filetype-icon-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--bs-border-color-translucent);
+  border-radius: 30px;
+}
+.file .filetype-icon-container .icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  fill: var(--green);
+}
+
 .column_content {
   background: red;
   padding: 100px 0;

@@ -540,7 +540,8 @@ function usi_user_profile_redirect() {
     if(
         $post->post_name === 'user-profile' ||
         $post->post_name === 'edit-user-profile' ||
-        $post->post_name === 'user-photo-uploads'
+        $post->post_name === 'user-photo-uploads' ||
+        $post->post_name === 'pricing-inventory'
     ) {
         if(!is_user_logged_in()) {
             wp_redirect(get_home_url());
