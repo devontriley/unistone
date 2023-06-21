@@ -84,7 +84,7 @@ function modify_users_menu_item() {
         )
     ));
 
-    $usersMenuItemText = 'Users' . (count($users) ? ' <span class="menu-counter">' . count($users) . '</span>' : '');
+    $usersMenuItemText = 'Users' . (count($users) ? ' <span class="awaiting-mod">' . count($users) . '</span>' : '');
 
     foreach ($menu as $key => $item) {
         if ($item[2] === 'users.php') {
