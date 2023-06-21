@@ -70,6 +70,31 @@ register_nav_menus(
     )
 );
 
+// Add notification bubble to admin Users link showing the numnber of unapproved users
+function modify_users_menu_item() {
+    global $menu;
+
+    $users = get_users(array(
+        'meta_query' => array(
+            array(
+                'key' => 'account_status',
+                'value' => 'awaiting_admin_review',
+                'compare' => '='
+            )
+        )
+    ));
+
+    $usersMenuItemText = 'Users' . (count($users) ? ' <span class="menu-counter">' . count($users) . '</span>' : '');
+
+    foreach ($menu as $key => $item) {
+        if ($item[2] === 'users.php') {
+            $menu[$key][0] = $usersMenuItemText;
+            break;
+        }
+    }
+}
+add_action('admin_menu', 'modify_users_menu_item');
+
 // Include shortcodes
 include('includes/shortcodes.php');
 
