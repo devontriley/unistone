@@ -29,29 +29,31 @@ $enableNotificationBar = get_field('notification_enable', 'option');
 
 <body data-barba="wrapper" class="<?php if($enableNotificationBar){ echo 'enable-notification-bar'; }?>">
 
-<div id="transition-panel"></div>
+    <?php wp_body_open(); ?>
 
-<div id="viewport-border"></div>
+    <div id="transition-panel"></div>
 
-<main data-barba="container" data-barba-namespace="home">
+    <div id="viewport-border"></div>
 
-    <?php include('includes/notification-bar.php'); ?>
+    <main data-barba="container" data-barba-namespace="home">
 
-    <div class="menu_drawer offcanvas offcanvas-start" tabindex="-1" id="menuDrawer" aria-labelledby="offcanvasLabel">
-        <div class="offcanvas-body">
-            <div>
-                <?php wp_nav_menu(['menu' => 'primary-menu']); ?>
+        <?php include('includes/notification-bar.php'); ?>
 
-                <div class="menu-primary-menu-container">
-                    <ul class="menu">
-                        <li class="menu-item <?php if(trim($_SERVER['REQUEST_URI'], '/') === 'contact'){ echo 'current-menu-item'; }?>"><a href="<?php echo get_bloginfo('url') ?>/contact">Contact</a></li>
-                        <?php include('includes/dealer-login-links.php'); ?>
-                    </ul>
+        <div class="menu_drawer offcanvas offcanvas-start" tabindex="-1" id="menuDrawer" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-body">
+                <div>
+                    <?php wp_nav_menu(['menu' => 'primary-menu']); ?>
+
+                    <div class="menu-primary-menu-container">
+                        <ul class="menu">
+                            <li class="menu-item <?php if(trim($_SERVER['REQUEST_URI'], '/') === 'contact'){ echo 'current-menu-item'; }?>"><a href="<?php echo get_bloginfo('url') ?>/contact">Contact</a></li>
+                            <?php include('includes/dealer-login-links.php'); ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="site-wrapper">
+        <div class="site-wrapper">
 
-        <?php include('includes/primary_menu.php'); ?>
+            <?php include('includes/primary_menu.php'); ?>
