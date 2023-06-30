@@ -15,7 +15,6 @@ function remove_textarea() {
 
 // Disable Gutenberg
 add_filter('use_block_editor_for_post', '__return_false', 10);
-
 add_action( 'wp_enqueue_scripts', function() {
     // Remove CSS on the front end.
     wp_dequeue_style( 'wp-block-library' );
@@ -24,6 +23,9 @@ add_action( 'wp_enqueue_scripts', function() {
     // Remove inline global CSS on the front end.
     wp_dequeue_style( 'global-styles' );
 }, 20 );
+
+// Load Google Tag Manager
+include('includes/google_tag_manager.php');
 
 // Allow SVG uploads
 function cc_mime_types($mimes) {
