@@ -1,6 +1,7 @@
 {
     "require": {
         "kunalvarma05/dropbox-php-sdk": "^0.4.1",
-        "analog/analog": "^1.0"
+        "analog/analog": "^1.0",
+        "mailchimp/marketing": "*"
     }
 }
